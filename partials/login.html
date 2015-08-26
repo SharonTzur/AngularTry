@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><div class="form-container">
+    <h1 class="form-title">Login </h1>
+    <form id="login">
+        <div class="form-group">
+            <label for="inputUsername">Username</label>
+            <input type="text"  ng-model="newUser.username" class="form-control" id="inputUsername" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" ng-model="newUser.password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+        <br/>
+        <input type="button" ng-click="login(newUser)" value="Login" class="btn btn-primary" />
+    </form>
+</div>
+
+</body>
+</html>

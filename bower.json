@@ -1,0 +1,27 @@
+{
+  "name": "AngularTry",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SharonTzur/AngularTry",
+  "authors": [
+    "Sharon <gaytomatoxx@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "parse-angular-patch": "~0.1.2",
+    "javascript-state-machine": "~2.3.5"
+  }
+}

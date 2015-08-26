@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://discovervenus.com/go.js"></script>
+    <title>Flowchart</title>
+    <!-- Copyright 1998-2015 by Northwoods Software Corporation. -->
+    <meta charset="UTF-8">
+    <script id="code">
+        // Make all ports on a node visible when the mouse is over the node
+
+        // Show the diagram's model in JSON format that the user may edit
+
+    </script>
+</head>
+<body onload="init()">
+<div class="creator-container">
+    <span class="form-title"> Create your own strategy:</span> <input type="text" id="strat-title" ng-model="strategy.title">
+<div id="sample">
+    <div style="width:100%; white-space:nowrap;">
+    <span style="display: inline-block; vertical-align: top; padding: 5px; width:100px">
+      <div id="myPalette" style="border: solid 1px gray; height: 720px"></div>
+    </span>
+
+    <span style="display: inline-block; vertical-align: top; padding: 5px; width:80%">
+      <div id="myDiagram" style="border: solid 1px gray; height: 720px"></div>
+    </span>
+    </div>
+
+
+    <button id="SaveButton" ng-click="save()">Save</button>
+
+  <textarea id="mySavedModel" style="width:100%;height:300px" >
+
+  { "class": "go.GraphLinksModel",
+  "linkFromPortIdProperty": "fromPort",
+  "linkToPortIdProperty": "toPort",
+  "nodeDataArray": [
+{"category":"task", "text":"task1", "figure":"Diamond", "key":-2, "loc":"-55 -578"},
+{"category":"Start", "text":"Start", "key":-1, "loc":"-54 -645"},
+{"category":"How", "text":"How", "key":-7, "loc":"115 -607"},
+{"category":"Why", "text":"Why", "key":-4, "loc":"115 -553"},
+{"category":"Tip", "text":"Tip", "key":-5, "loc":"-213 -608"},
+{"category":"Example", "text":"Example", "key":-6, "loc":"-234 -556"},
+{"category":"task", "text":"task2", "figure":"Diamond", "key":-8, "loc":"-51 -462"},
+{"category":"Tip", "text":"Tip", "key":-9, "loc":"-209 -492"},
+{"category":"Example", "text":"Example", "key":-10, "loc":"-230 -440"},
+{"category":"Why", "text":"Why", "key":-11, "loc":"118 -434"},
+{"category":"How", "text":"How", "key":-12, "loc":"118 -488"},
+{"category":"task", "text":"task3", "figure":"Diamond", "key":-13, "loc":"-52 -339"},
+{"category":"Tip", "text":"Tip", "key":-14, "loc":"-210 -369"},
+{"category":"Example", "text":"Example", "key":-15, "loc":"-231 -317"},
+{"category":"How", "text":"How", "key":-16, "loc":"117 -365"},
+{"category":"Why", "text":"Why", "key":-17, "loc":"117 -311"}
+ ],
+  "linkDataArray": [
+{"from":-1, "to":-2, "fromPort":"B", "toPort":"T", "points":[-54.00000000000001,-619.7906976744185,-54.00000000000001,-609.7906976744185,-54.5,-609.7906976744185,-54.5,-620.1,-55,-620.1,-55,-610.1]},
+{"from":-2, "to":-7, "fromPort":"R", "toPort":"L", "visible":true, "points":[-9.5,-578,0.5,-578,40.75,-578,40.75,-607,81,-607,91,-607], "text":"How"},
+{"from":-2, "to":-4, "fromPort":"R", "toPort":"L", "visible":true, "points":[-9.5,-578,0.5,-578,40.75,-578,40.75,-553,81,-553,91,-553], "text":"Why"},
+{"from":-2, "to":-5, "fromPort":"L", "toPort":"R", "visible":true, "points":[-100.5,-578,-110.5,-578,-147,-578,-147,-608,-183.5,-608,-193.5,-608], "text":"Tip"},
+{"from":-2, "to":-6, "fromPort":"L", "toPort":"R", "visible":true, "points":[-100.5,-578,-110.5,-578,-148,-578,-148,-556,-185.5,-556,-195.5,-556], "text":"Example"},
+{"from":-8, "to":-9, "fromPort":"L", "toPort":"R", "visible":true, "points":[-96.5,-462,-106.5,-462,-143,-462,-143,-492,-179.5,-492,-189.5,-492], "text":"Tip"},
+{"from":-8, "to":-10, "fromPort":"L", "toPort":"R", "visible":true, "points":[-96.5,-462,-106.5,-462,-144,-462,-144,-440,-181.5,-440,-191.5,-440], "text":"Example"},
+{"from":-8, "to":-12, "fromPort":"R", "toPort":"L", "visible":true, "points":[-5.5,-462,4.5,-462,44.25,-462,44.25,-487.99999999999994,84,-487.99999999999994,94,-487.99999999999994], "text":"How"},
+{"from":-8, "to":-11, "fromPort":"R", "toPort":"L", "visible":true, "points":[-5.5,-462,4.5,-462,44.25,-462,44.25,-433.99999999999994,84,-433.99999999999994,94,-433.99999999999994], "text":"Why"},
+{"from":-2, "to":-8, "fromPort":"B", "toPort":"T", "visible":true, "points":[-55,-545.9,-55,-535.9,-55,-520,-51,-520,-51,-504.1,-51,-494.1], "text":"isDone == true"},
+{"from":-13, "to":-14, "fromPort":"L", "toPort":"R", "visible":true, "points":[-97.5,-339,-107.5,-339,-144,-339,-144,-369,-180.5,-369,-190.5,-369], "text":"Tip"},
+{"from":-13, "to":-15, "fromPort":"L", "toPort":"R", "visible":true, "points":[-97.5,-339,-107.5,-339,-145,-339,-145,-317,-182.5,-317,-192.5,-317], "text":"Example"},
+{"from":-13, "to":-17, "fromPort":"R", "toPort":"L", "visible":true, "points":[-6.5,-339,3.5,-339,43.25,-339,43.25,-311,83,-311,93,-311], "text":"Why"},
+{"from":-13, "to":-16, "fromPort":"R", "toPort":"L", "visible":true, "points":[-6.5,-339,3.5,-339,43.25,-339,43.25,-365,83,-365,93,-365], "text":"How"},
+{"from":-8, "to":-13, "fromPort":"B", "toPort":"T", "visible":true, "points":[-51,-429.90000000000003,-51,-419.90000000000003,-51,-399,-52,-399,-52,-381.1,-52,-371.1], "text":"isDone == true"}
+ ]}
+  </textarea>
+    <button ng-click="makeSVG()">Render as SVG</button>
+    <div id="SVGArea"></div>
+</div>
+</div>
+</body>
+</html>
